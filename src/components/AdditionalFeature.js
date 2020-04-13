@@ -4,6 +4,7 @@ import {addFeature } from '../actions/index'
 
 const AdditionalFeature = props => {
   const featureMatch = id => {
+    console.log("jp: props on line 7", props)
     const match = props.car.features.filter(feature => feature.id === id);
     return match.length > 0 ? true : false;
   };
@@ -29,4 +30,7 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { addFeature })(AdditionalFeature);
+export default connect(
+  mapStateToProps, 
+  { addFeature }
+  )(AdditionalFeature);
